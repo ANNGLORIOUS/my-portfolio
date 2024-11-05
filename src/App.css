@@ -798,3 +798,20 @@ h1 {
   max-width: 100px; /* Adjust size as needed */
   height: auto;
 }
+
+/* Hamburger Menu - Active State */
+.nav__hamburger.active .nav__hamburger__line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav__hamburger.active .nav__hamburger__line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__hamburger.active .nav__hamburger__line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.nav__hamburger__line {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}

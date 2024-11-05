@@ -5,31 +5,33 @@ function Navbar() {
   const [navActive, setNavActive] = useState(false);
 
   const toggleNav = () => {
-    setNavActive(!navActive);
+    setNavActive((prevNavActive) => !prevNavActive);
   };
 
   const closeMenu = () => {
     setNavActive(false);
   };
 
+  // Add a resize listener with debouncing to avoid unnecessary renders
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 500) {
-        closeMenu(); // Call the function
+      if (window.innerWidth > 1200) {
+        setNavActive(false); // Close the menu if on larger screens
       }
     };
 
-    window.addEventListener("resize", handleResize);
+    // Debounce function to limit the number of calls to handleResize
+    let resizeTimeout;
+    const debouncedResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(handleResize, 150); // Delay the resize handler
+    };
+
+    window.addEventListener("resize", debouncedResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", debouncedResize);
     };
-  }, []);
-
-  useEffect(() => {
-    if (window.innerWidth <= 1200) {
-      closeMenu(); // Call the function
-    }
   }, []);
 
   return (
@@ -37,14 +39,15 @@ function Navbar() {
       <div>
         <img src="/assets/resolution-logo.png" alt="Logo" />
       </div>
-      <a
+      <button
         className={`nav__hamburger ${navActive ? "active" : ""}`}
         onClick={toggleNav}
+        aria-label="Toggle navigation"
       >
         <span className="nav__hamburger__line"></span>
         <span className="nav__hamburger__line"></span>
         <span className="nav__hamburger__line"></span>
-      </a>
+      </button>
       <div className={`navbar--items ${navActive ? "active" : ""}`}>
         <ul>
           <li>
