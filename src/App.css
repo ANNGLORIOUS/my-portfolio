@@ -786,3 +786,15 @@ h1 {
     margin-top: 10px;
     font-weight: bold;
 }
+
+
+.navbar img,
+.footer img {
+  max-width: 100px; /* adjust as needed */
+  height: auto;
+}
+
+.footer-logo {
+  max-width: 100px; /* Adjust size as needed */
+  height: auto;
+}
