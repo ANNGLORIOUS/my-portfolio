@@ -1,24 +1,55 @@
+// import CountUp from "react-countup";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+
+
 export default function HeroSection() {
-    return (
-      <section id="heroSection" className="hero--section">
-        <div className="hero--section--content--box">
-          <div className="hero--section--content">
-            <p className="section--title">Hey, I'm AnnGLorious</p>
-            <h1 className="hero--section--title">
-              <span className="hero--section-title--color">Full Stack</span>{" "}
-              <br />
-              Developer
-            </h1>
-            <p className="hero--section-description">
-            I am a passionate Full Stack Developer specializing in building responsive web applications.
-              <br /> I can successfully deliver projects that enhance user experiences and meet business goals. I thrive on problem-solving and continuously seek to learn new technologies to keep my skills sharp.
-            </p>
-          </div>
-          <button className="btn btn-primary">Get In Touch</button>
+  const [text] = useTypewriter({
+    words: [
+      "Software Engineer 👩‍💻",
+      "Full-Stack Developer 💻",
+      "Back-end Ninja 🥋",
+      "Web Developer 🛠️",
+      "Database Expert 📊",
+      " Bibliophile 📚",
+      "Tech Geek 🤓",
+      "Visual Art Enthusiast 🌄",
+      " Globetrotter 🌍 ",
+    ],
+    loop: true,
+    typespeed: 20,
+    deleteSpeed: 10,
+    delaySpeed: 1000,
+  });
+
+  return (
+    <section id="heroSection" className="hero--section">
+      <div className="hero--section--content--box">
+        <div className="hero--section--content">
+          <h1
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            className="text-headingColor font-[800]
+                    text-[1.8rem] sm:text-[40px] leading-[35px] sm:leading-[46px] mt-5"
+          > Hey, I'm AnnGLorious<br /> <span>{text}</span>
+            <Cursor
+              cursorBlinking="false"
+              cursorStyle="|"
+              cursorColor="#8873ef"
+            />
+          </h1>
+
+          <a href="/ANN-Glorious-CV.pdf" download="ANN-Glorious-CV.pdf" className="resume-link">
+            <button className="resume-button">
+              <i className="ri-shake-hands-line"></i> Get Resume
+            </button>
+          </a>
+
+
         </div>
-        <div className="hero--section--img">
-          <img src="./img/hero_img.png" alt="Hero Section" />
-        </div>
-      </section>
-    );
-  }
+      </div>
+      <div className="hero--section--img">
+        <img src="/assets/WhatsApp-image.jpeg" alt="Hero Section" />
+      </div>
+    </section>
+  );
+}
