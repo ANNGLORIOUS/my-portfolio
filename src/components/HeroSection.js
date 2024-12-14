@@ -1,6 +1,6 @@
 // import CountUp from "react-countup";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-
+import heroLogoImage from "../assets/hero-logo.jpeg"
 
 export default function HeroSection() {
   const [text] = useTypewriter({
@@ -48,7 +48,8 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="hero--section--img">
-        <img src="/assets/WhatsApp-image.jpeg" alt="Hero Section" />
+
+<img src={heroLogoImage } alt="Hero Section" />
       </div>
     </section>
   );
