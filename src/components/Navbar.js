@@ -75,7 +75,7 @@ function Navbar() {
               to="MyPortfolio"
               className="navbar--content"
             >
-              Portfolio
+              AboutMe
             </Link>
           </li>
           <li>
@@ -89,7 +89,7 @@ function Navbar() {
               to="AboutMe"
               className="navbar--content"
             >
-              About Me
+              Skills
             </Link>
           </li>
           <li>
@@ -103,7 +103,7 @@ function Navbar() {
               to="testimonial"
               className="navbar--content"
             >
-              Testimonials
+              Portfolio
             </Link>
           </li>
         </ul>

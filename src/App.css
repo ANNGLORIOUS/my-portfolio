@@ -24,6 +24,7 @@ body {
     --darkblue: #1c1e53;
     --black: #000000;
     --white: #ffffff;
+    --dark-purple: #3c1361;
   }
   .btn {
     font-family: "Roboto";
@@ -906,3 +907,5 @@ h1 {
 .hero--section--img img:hover {
   transform: scale(1.1); 
 }
+
+
