@@ -10,6 +10,7 @@ export default function HeroSection() {
       "Back-end Ninja 🥋",
       "Web Developer 🛠️",
       "Database Expert 📊",
+      "Electrical Engineer 👩🏾‍🔬",
       "Bibliophile 📚",
       "Tech Geek 🤓",
       "Visual Art Enthusiast 🌄",
@@ -22,79 +23,44 @@ export default function HeroSection() {
   });
 
   return (
-    <section id="heroSection" className="hero--section py-10">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
-        {/* Left Section */}
-        <div className="w-full md:w-1/3">
-          <div>
-            <h1
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              className="text-headingColor font-[800] text-[1.8rem] sm:text-[40px] leading-[35px] sm:leading-[46px] mt-5"
-            >
+    <section id="heroSection" className="hero--section">
+      <div className="container">
+        <div className="hero--grid">
+          {/* Left Section */}
+          <div className="hero--section--content-box">
+            <h1 className="hero--section--title">
               Hey, I'm AnnGLorious
               <br />
               <span>{text}</span>
-              <Cursor
-                cursorBlinking="false"
-                cursorStyle="|"
-                cursorColor="#8873ef"
-              />
+              <Cursor cursorBlinking="false" cursorStyle="|" cursorColor="#8873ef" />
             </h1>
-
-            <a
-              href="/_MY-RESUME.pdf"
-              download="MY-RESUME.pdf"
-              className="resume-link mt-5 inline-block"
-            >
-              <button className="resume-button bg-primaryColor text-white py-2 px-4 rounded-[8px] hover:bg-smallTextColor transition duration-300">
-                <i className="ri-shake-hands-line"></i> Get Resume
-              </button>
+            <a href="/_MY-RESUME.pdf" download="MY-RESUME.pdf">
+              <button className="resume-button">Get Resume</button>
             </a>
           </div>
-        </div>
 
-        {/* Center Section */}
-        <div className="w-full md:w-1/3 flex justify-center">
+          {/* Center Section */}
           <div className="hero--section--img">
-            <img src={heroLogoImage} alt="Hero Section" className="rounded-[8px]" />
+            <img src={heroLogoImage} alt="Hero Section" />
           </div>
-        </div>
 
-        {/* Right Section */}
-        <div className="w-full md:w-1/3 flex justify-end">
-          <div className="flex flex-col items-center md:items-end gap-10">
-            <div className="text-center md:text-right">
-              <h2 className="text-headingColor font-[700] text-[32px]">
-                <CountUp start={0} end={2} duration={8} suffix="+" />
-              </h2>
-              <h4 className="text-headingColor font-[600] text-[18px]">
-                Years of Experience
-              </h4>
+          {/* Right Section */}
+          <div className="hero--stats">
+            <div className="stat-box">
+              <h2><CountUp start={0} end={2} duration={8} suffix="+" /></h2>
+              <h4>Years of Experience</h4>
             </div>
-            <div className="text-center md:text-right">
-              <h2 className="text-headingColor font-[700] text-[32px]">
-                <CountUp start={0} end={100} duration={5} suffix="%" />
-              </h2>
-              <h4 className="text-headingColor font-[600] text-[18px]">
-                Success Rate
-              </h4>
+            <div className="stat-box">
+              <h2><CountUp start={0} end={100} duration={5} suffix="%" /></h2>
+              <h4>Success Rate</h4>
             </div>
-            <div className="text-center md:text-right">
-              <h2 className="text-headingColor font-[700] text-[32px]">
-                <CountUp start={0} end={9} duration={10} suffix="+" />
-              </h2>
-              <h4 className="text-headingColor font-[600] text-[18px]">
-                Projects
-              </h4>
+            <div className="stat-box">
+              <h2><CountUp start={0} end={9} duration={10} suffix="+" /></h2>
+              <h4>Projects</h4>
             </div>
-            <div className="text-center md:text-right">
-              <h2 className="text-headingColor font-[700] text-[32px]">
-                <CountUp start={0} end={1000} duration={10} suffix="+" />
-              </h2>
-              <h4 className="text-headingColor font-[600] text-[18px]">
-                Hours Spent Coding
-              </h4>
+            <div className="stat-box">
+              <h2><CountUp start={0} end={1000} duration={10} suffix="+" /></h2>
+              <h4>Hours Spent Coding</h4>
             </div>
           </div>
         </div>
