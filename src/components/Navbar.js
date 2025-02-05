@@ -36,9 +36,20 @@ function Navbar() {
 
   return (
     <nav className={`navbar ${navActive ? "active" : ""}`}>
-      <div>
-        <img src="/assets/resolution-logo.png" alt="Logo" />
+      {/* ============== logo ============== */}
+      <div className="flex items-center gap-[10px]">
+        
+
+        <div className="leading-[20px]">
+          <h2 className="text-xl text-smallTextColor font-[700]">
+            AnnGLorious Mueni
+          </h2>
+          <p className="text-smallTextColor text-[14px] font-[500]">
+            Personal
+          </p>
+        </div>
       </div>
+      {/* =========== logo end ===========  */}
       <button
         className={`nav__hamburger ${navActive ? "active" : ""}`}
         onClick={toggleNav}
