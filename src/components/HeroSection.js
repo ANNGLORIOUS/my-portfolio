@@ -43,8 +43,8 @@ export default function HeroSection() {
             </h1>
 
             <a
-              href="/ANN-Glorious-CV.pdf"
-              download="ANN-Glorious-CV.pdf"
+              href="/_MY-RESUME.pdf"
+              download="MY-RESUME.pdf"
               className="resume-link mt-5 inline-block"
             >
               <button className="resume-button bg-primaryColor text-white py-2 px-4 rounded-[8px] hover:bg-smallTextColor transition duration-300">
