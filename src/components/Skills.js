@@ -2,8 +2,6 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 
 // Importing logos
 import pythonLogo from '../assets/assetlogo/python-svgrepo-com.svg';
@@ -38,7 +36,7 @@ const backendSkills = [
 
 const versionSkills = [
   { logo: gitLogo, name: "Git" },
-  { logo: githubLogo, name: "Github" },
+  { logo: githubLogo, name: "GitHub" },
 ];
 
 const toolsSkills = [
@@ -50,7 +48,7 @@ const toolsSkills = [
 const sliderSettings = {
   dots: false,
   infinite: true,
-  speed: 1000, // Reduced speed for smoother transitions
+  speed: 500,
   slidesToShow: 4,
   slidesToScroll: 1,
   autoplay: true,
@@ -66,29 +64,47 @@ const Skills = () => {
   return (
     <section className="skills">
       <h2>My Skills</h2>
-      <Tabs>
-        <TabList>
-          <Tab>Frontend</Tab>
-          <Tab>Backend</Tab>
-          <Tab>Version Control & Deployment</Tab>
-          <Tab>Tools</Tab>
-        </TabList>
-
-        {[frontendSkills, backendSkills, versionSkills, toolsSkills].map((skills, index) => (
-          <TabPanel key={index}>
-            <Slider {...sliderSettings}>
-              {skills.map((skill, idx) => (
-                <div className="skill-item" key={idx}>
-                  <div className="logo-container">
-                    <img src={skill.logo} alt={skill.name} className="logo" />
-                  </div>
-                  <p>{skill.name}</p>
-                </div>
-              ))}
-            </Slider>
-          </TabPanel>
+      <Slider {...sliderSettings} className="skills-slider">
+        {/* Frontend Skills */}
+        {frontendSkills.map((skill, idx) => (
+          <div className="skill-item" key={idx}>
+            <div className="logo-container">
+              <img src={skill.logo} alt={skill.name} className="logo" />
+            </div>
+            <p>{skill.name}</p>
+          </div>
         ))}
-      </Tabs>
+
+        {/* Backend Skills */}
+        {backendSkills.map((skill, idx) => (
+          <div className="skill-item" key={idx}>
+            <div className="logo-container">
+              <img src={skill.logo} alt={skill.name} className="logo" />
+            </div>
+            <p>{skill.name}</p>
+          </div>
+        ))}
+
+        {/* Version Control Skills */}
+        {versionSkills.map((skill, idx) => (
+          <div className="skill-item" key={idx}>
+            <div className="logo-container">
+              <img src={skill.logo} alt={skill.name} className="logo" />
+            </div>
+            <p>{skill.name}</p>
+          </div>
+        ))}
+
+        {/* Tools Skills */}
+        {toolsSkills.map((skill, idx) => (
+          <div className="skill-item" key={idx}>
+            <div className="logo-container">
+              <img src={skill.logo} alt={skill.name} className="logo" />
+            </div>
+            <p>{skill.name}</p>
+          </div>
+        ))}
+      </Slider>
     </section>
   );
 };
