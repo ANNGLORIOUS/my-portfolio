@@ -366,75 +366,78 @@ body {
     height: 100%;
   }
   /* About Us Ends */
-  
-  /* My Portfolio Starts */
+  /* portfolio start */
   .portfolio--section {
     display: flex;
-    padding: 112px 85px;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 80px;
-  }
-  .portfolio--container-box {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    padding: 80px 50px;
+    background-color: #f5fcff;
+
   }
-  .portfolio--container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 21.3px;
-  }
-  .portfolio--section--container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 42.6px;
-    width: 100%;
-  }
-  .portfolio--section--img {
-    border-radius: 8px;
-    width: 100%;
-  }
-  .portfolio--section--img > img {
-    width: 100%;
-  }
-  .portfolio--section--card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    flex: 1 0 0;
-    background: #fff;
-    box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-  }
-  .portfolio--section--card--content {
-    display: flex;
-    padding: 32px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    align-self: stretch;
-  }
+  
   .portfolio--section--title {
-    color: var(--heading-color);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #282938;
+    margin-bottom: 40px;
   }
-  .portfolio--link {
+  
+  .portfolio--section--container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    width: 200%;
+    max-width: 1200px;
+    /* width: 450px;
+    height: 550px; */
+    
+    
+  }
+  
+  .project-links {
     text-decoration: none;
-    display: flex;
-    gap: 16px;
-    border-bottom: 1.33px solid var(--primary);
-    padding-bottom: 10.6px;
+  }
+  
+  .proj-imgbx {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    object-fit: cover;
+  }
+  .proj-imgbx img {
+    width: 100%;
+    border-radius: 12px;
+    height: 400px;
+    width: 900px;
+  }
+  
+  .proj-imgbx:hover {
+    transform: scale(1.05);
+  }
+  
+  .proj-txtx {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+  
+  .proj-txtx h4 {
+    font-size: 1.2rem;
     font-weight: 600;
   }
-  .portfolio--section--card:hover path {
-    stroke: #006b6a;
+  
+  .proj-txtx span {
+    font-size: 0.9rem;
   }
+  
   /* Portfolio Ends */
   
   /* Testimonial */
