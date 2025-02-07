@@ -5,7 +5,6 @@ import moringadev from '../assets/assetlogo/moringadev.png';
 import letafood from '../assets/assetlogo/letafood.png';
 import smartsoko from '../assets/assetlogo/smartsoko.png';
 import traveljournal from '../assets/assetlogo/traveljournal.png';
-// import '../styles/Portfolio.css';
 
 const Projects = () => {
   const projects = [
@@ -42,9 +41,10 @@ const Projects = () => {
   ];
 
   return (
-    <section className="portfolio--section" id="portfolio">
-      <h2 className="portfolio--section--title">My Portfolio</h2>
-      <div className="portfolio--section--container">
+    <section className="project" id="projects">
+      <h2>Projects</h2>
+      <p>Explore my projects and see the innovative solutions I've built.</p>
+      <div id="project-tiles">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
