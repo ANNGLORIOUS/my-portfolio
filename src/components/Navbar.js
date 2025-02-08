@@ -12,23 +12,20 @@ function Navbar() {
     setNavActive(false);
   };
 
-  // Add a resize listener with debouncing to avoid unnecessary renders
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1200) {
-        setNavActive(false); // Close the menu if on larger screens
+        setNavActive(false); 
       }
     };
 
-    // Debounce function to limit the number of calls to handleResize
     let resizeTimeout;
     const debouncedResize = () => {
       clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(handleResize, 150); // Delay the resize handler
+      resizeTimeout = setTimeout(handleResize, 150);
     };
 
     window.addEventListener("resize", debouncedResize);
-
     return () => {
       window.removeEventListener("resize", debouncedResize);
     };
@@ -36,10 +33,8 @@ function Navbar() {
 
   return (
     <nav className={`navbar ${navActive ? "active" : ""}`}>
-      {/* ============== logo ============== */}
+      {/* ============== Logo ============== */}
       <div className="flex items-center gap-[10px]">
-        
-
         <div className="leading-[20px]">
           <h2 className="text-xl text-smallTextColor font-[700]">
             AnnGLorious Mueni
@@ -49,7 +44,8 @@ function Navbar() {
           </p>
         </div>
       </div>
-      {/* =========== logo end ===========  */}
+      
+      {/* ============== Hamburger Menu Button ============== */}
       <button
         className={`nav__hamburger ${navActive ? "active" : ""}`}
         onClick={toggleNav}
@@ -59,6 +55,8 @@ function Navbar() {
         <span className="nav__hamburger__line"></span>
         <span className="nav__hamburger__line"></span>
       </button>
+
+      {/* ============== Navigation Links ============== */}
       <div className={`navbar--items ${navActive ? "active" : ""}`}>
         <ul>
           <li>
@@ -83,21 +81,7 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="MyPortfolio"
-              className="navbar--content"
-            >
-              AboutMe
-            </Link>
-          </li>
-          <li>
-            <Link
-              onClick={closeMenu}
-              activeClass="navbar--active-content"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              to="AboutMe"
+              to="skillsSection"  // Updated Skills Section ID
               className="navbar--content"
             >
               Skills
@@ -111,7 +95,21 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="testimonial"
+              to="projectsSection"  // Updated Projects Section ID
+              className="navbar--content"
+            >
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link
+              onClick={closeMenu}
+              activeClass="navbar--active-content"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              to="portfolioSection"  // If needed for Portfolio
               className="navbar--content"
             >
               Portfolio
@@ -119,6 +117,8 @@ function Navbar() {
           </li>
         </ul>
       </div>
+
+      {/* ============== Contact Me Button ============== */}
       <Link
         onClick={closeMenu}
         activeClass="navbar--active-content"
@@ -126,7 +126,7 @@ function Navbar() {
         smooth={true}
         offset={-70}
         duration={500}
-        to="Contact"
+        to="contactSection"  // Updated Contact Section ID
         className="btn btn-outline-primary"
       >
         Contact Me
