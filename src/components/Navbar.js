@@ -39,9 +39,6 @@ function Navbar() {
           <h2 className="text-xl text-smallTextColor font-[700]">
             AnnGLorious Mueni
           </h2>
-          <p className="text-smallTextColor text-[14px] font-[500]">
-            Personal
-          </p>
         </div>
       </div>
       
