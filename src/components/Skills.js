@@ -53,7 +53,7 @@ const sliderSettings = {
 
 const Skills = () => {
   return (
-    <section className="skills">
+    <section id='skillsSection' className="skills">
       <h2>My Skills</h2>
       <Slider {...sliderSettings} className="skills-slider">
         {skills.map((skill, idx) => (

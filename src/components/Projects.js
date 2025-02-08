@@ -48,7 +48,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="project" id="projects">
+    <section id="projectsSection" className="project" >
       <h2>Projects</h2>
       <p>Explore my projects and see the innovative solutions I've built.</p>
       <div id="project-tiles">

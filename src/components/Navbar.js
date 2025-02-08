@@ -81,7 +81,7 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="skillsSection"  // Updated Skills Section ID
+              to="skillsSection"  
               className="navbar--content"
             >
               Skills
@@ -95,7 +95,7 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="projectsSection"  // Updated Projects Section ID
+              to="projectsSection"  
               className="navbar--content"
             >
               Projects
@@ -109,12 +109,13 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="portfolioSection"  // If needed for Portfolio
+              to="contactSection" 
               className="navbar--content"
             >
-              Portfolio
+              ContactMe
             </Link>
           </li>
+          
         </ul>
       </div>
 
@@ -126,7 +127,7 @@ function Navbar() {
         smooth={true}
         offset={-70}
         duration={500}
-        to="contactSection"  // Updated Contact Section ID
+        to="contactSection"  
         className="btn btn-outline-primary"
       >
         Contact Me

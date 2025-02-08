@@ -20,7 +20,7 @@ export default function ContactMe() {
   };
 
   return (
-    <section id="Contact" className="contact--section">
+    <section id="contactSection" className="contact--section">
       <div className="contact--content">
         <p className="sub--title">Get In Touch</p>
         <h2>Contact Me</h2>

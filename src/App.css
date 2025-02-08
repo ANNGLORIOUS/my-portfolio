@@ -251,10 +251,13 @@ body {
 /* Hero Section Style Ends */
 
  /* Skills Section */
-.skills {
+ .skills {
   padding: 80px 0;
   background-color: var(--bg-shade);
-  text-align: center;
+  text-align: center; /* Ensures everything in the section is centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* .skills-title{
   font-size: 24px;
@@ -269,8 +272,8 @@ body {
   color: var(--heading-color);
   margin-bottom: 30px;
   text-align: center;
+  width: 100%; 
 }
-
 /* Skill Box */
 .skill-slider {
   width: 100%;
