@@ -63,7 +63,7 @@ const sliderSettings = {
 const Skills = () => {
   return (
     <section className="skills">
-      <h2>My Skills</h2>
+      <h2 className="skills-heading">My Skills</h2>
       <Slider {...sliderSettings} className="skills-slider">
         {/* Frontend Skills */}
         {frontendSkills.map((skill, idx) => (
