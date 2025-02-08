@@ -34,6 +34,7 @@ export default function HeroSection() {
               <span>{text}</span>
               <Cursor cursorBlinking="false" cursorStyle="|" cursorColor="#8873ef" />
             </h1>
+            
             <a href="/_MY-RESUME.pdf" download="MY-RESUME.pdf">
               <button className="resume-button">Get Resume</button>
             </a>
@@ -47,7 +48,7 @@ export default function HeroSection() {
           {/* Right Section */}
           <div className="hero--stats">
             <div className="stat-box">
-              <h2><CountUp start={0} end={2} duration={8} suffix="+" /></h2>
+              <h2><CountUp start={0} end={1} duration={8} suffix="+" /></h2>
               <h4>Years of Experience</h4>
             </div>
             <div className="stat-box">

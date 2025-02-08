@@ -19,29 +19,20 @@ import cssLogo from '../assets/assetlogo/css-3-svgrepo-com.svg';
 import tailwindLogo from '../assets/assetlogo/tailwindcss-icon-svgrepo-com.svg';
 
 // Skill categories
-const frontendSkills = [
-  { logo: reactLogo, name: "React" },
-  { logo: javascriptLogo, name: "JavaScript" },
-  { logo: htmlLogo, name: "HTML" },
-  { logo: cssLogo, name: "CSS" },
-  { logo: tailwindLogo, name: "Tailwind CSS" },
-];
-
-const backendSkills = [
-  { logo: pythonLogo, name: "Python" },
-  { logo: flaskLogo, name: "Flask" },
-  { logo: nodejsLogo, name: "Node.js" },
-  { logo: sqliteLogo, name: "SQLite" },
-];
-
-const versionSkills = [
-  { logo: gitLogo, name: "Git" },
-  { logo: githubLogo, name: "GitHub" },
-];
-
-const toolsSkills = [
-  { logo: dockerLogo, name: "Docker" },
-  { logo: typescriptLogo, name: "TypeScript" },
+const skills = [
+  { logo: reactLogo, name: 'React' },
+  { logo: javascriptLogo, name: 'JavaScript' },
+  { logo: htmlLogo, name: 'HTML' },
+  { logo: cssLogo, name: 'CSS' },
+  { logo: tailwindLogo, name: 'Tailwind CSS' },
+  { logo: pythonLogo, name: 'Python' },
+  { logo: flaskLogo, name: 'Flask' },
+  { logo: nodejsLogo, name: 'Node.js' },
+  { logo: sqliteLogo, name: 'SQLite' },
+  { logo: gitLogo, name: 'Git' },
+  { logo: githubLogo, name: 'GitHub' },
+  { logo: dockerLogo, name: 'Docker' },
+  { logo: typescriptLogo, name: 'TypeScript' },
 ];
 
 // Slider settings
@@ -63,40 +54,9 @@ const sliderSettings = {
 const Skills = () => {
   return (
     <section className="skills">
-      <h2 className="skills-heading">My Skills</h2>
+      <h2>My Skills</h2>
       <Slider {...sliderSettings} className="skills-slider">
-        {/* Frontend Skills */}
-        {frontendSkills.map((skill, idx) => (
-          <div className="skill-item" key={idx}>
-            <div className="logo-container">
-              <img src={skill.logo} alt={skill.name} className="logo" />
-            </div>
-            <p>{skill.name}</p>
-          </div>
-        ))}
-
-        {/* Backend Skills */}
-        {backendSkills.map((skill, idx) => (
-          <div className="skill-item" key={idx}>
-            <div className="logo-container">
-              <img src={skill.logo} alt={skill.name} className="logo" />
-            </div>
-            <p>{skill.name}</p>
-          </div>
-        ))}
-
-        {/* Version Control Skills */}
-        {versionSkills.map((skill, idx) => (
-          <div className="skill-item" key={idx}>
-            <div className="logo-container">
-              <img src={skill.logo} alt={skill.name} className="logo" />
-            </div>
-            <p>{skill.name}</p>
-          </div>
-        ))}
-
-        {/* Tools Skills */}
-        {toolsSkills.map((skill, idx) => (
+        {skills.map((skill, idx) => (
           <div className="skill-item" key={idx}>
             <div className="logo-container">
               <img src={skill.logo} alt={skill.name} className="logo" />
