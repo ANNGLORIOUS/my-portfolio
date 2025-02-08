@@ -5,6 +5,7 @@ import moringadev from '../assets/assetlogo/moringadev.png';
 import letafood from '../assets/assetlogo/letafood.png';
 import smartsoko from '../assets/assetlogo/smartsoko.png';
 import traveljournal from '../assets/assetlogo/traveljournal.png';
+import superheros from '../assets/assetlogo/superheros.jpg';
 
 const Projects = () => {
   const projects = [
@@ -37,6 +38,12 @@ const Projects = () => {
       description: 'An e-commerce platform that connects farmers directly with customers.',
       imgUrl: smartsoko,
       webUrl: 'https://github.com/ANNGLORIOUS/Pro-coder',
+    },
+    {
+      title: 'Superheroes',
+      description: 'The Superhero API is a RESTful API built with Flask and SQLAlchemy, designed to manage superheroes and their powers',
+      imgUrl: superheros,
+      webUrl: 'https://github.com/ANNGLORIOUS/phase4-code1',
     },
   ];
 
