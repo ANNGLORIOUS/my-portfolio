@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -49,7 +49,6 @@ const services = [
   { name: "Blockchain & Web3 Development", description: "Developing smart contracts, decentralized applications (DApps), and NFT marketplaces." },
 ];
 
-// Slider settings
 const sliderSettings = {
   dots: false,
   infinite: true,
@@ -67,6 +66,11 @@ const sliderSettings = {
 
 const Skills = () => {
   const [selectedService, setSelectedService] = useState(null);
+  const [isRotating, setIsRotating] = useState(true);
+
+  useEffect(() => {
+    setIsRotating(!selectedService);
+  }, [selectedService]);
 
   return (
     <section id='skillsSection' className="skills">
@@ -88,13 +92,20 @@ const Skills = () => {
       </Slider>
       
       <h2>My Services</h2>
-      <div className="services-container">
+      <motion.div 
+        className="services-container" 
+        animate={{ rotateY: isRotating ? 360 : 0 }} 
+        transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+      >
         {services.map((service, idx) => (
           <motion.div 
             className="service-item" 
             key={idx}
             onClick={() => setSelectedService(selectedService === service.name ? null : service.name)}
             whileHover={{ scale: 1.05 }}
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 100, damping: 10 }}
           >
             {service.name}
             <AnimatePresence>
@@ -104,6 +115,7 @@ const Skills = () => {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
                 >
                   <p>{service.description}</p>
                 </motion.div>
@@ -111,7 +123,7 @@ const Skills = () => {
             </AnimatePresence>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

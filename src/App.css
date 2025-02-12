@@ -358,11 +358,12 @@ body {
   padding: 10px;
   border-bottom: 1px solid var(--primary-color);
   width: 100%;
+  position: relative;
 }
 
 .service-dropdown {
   background: var(--primary-color);
-  color:black;
+  color: black;
   padding: 10px;
   border-radius: 5px;
   margin-top: 5px;
@@ -371,6 +372,13 @@ body {
   overflow: hidden;
 }
 
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
 
   /* About Us */
   .about--section {
