@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Importing logos
 import pythonLogo from '../assets/assetlogo/python-svgrepo-com.svg';
@@ -35,6 +36,19 @@ const skills = [
   { logo: typescriptLogo, name: 'TypeScript' },
 ];
 
+const services = [
+  { name: "Web Development", description: "Creating modern, responsive, and high-performance web applications using the latest technologies." },
+  { name: "Mobile App Development", description: "Building native and cross-platform mobile apps tailored to business and user needs." },
+  { name: "API Development & Integration", description: "Designing and integrating RESTful and GraphQL APIs for seamless data exchange." },
+  { name: "Database Development & Management", description: "Efficiently structuring, managing, and optimizing databases for scalability and performance." },
+  { name: "SaaS Development", description: "Developing cloud-based Software as a Service (SaaS) applications with subscription models." },
+  { name: "Custom Software Development", description: "Creating tailor-made software solutions for businesses to improve efficiency and productivity." },
+  { name: "AI & Machine Learning Solutions", description: "Implementing AI-powered tools, chatbots, and predictive analytics for data-driven decision-making." },
+  { name: "Technical Consulting & Mentorship", description: "Providing guidance on software architecture, code optimization, and career growth." },
+  { name: "UI/UX Design & Prototyping", description: "Designing intuitive and visually appealing interfaces using Figma and Adobe XD." },
+  { name: "Blockchain & Web3 Development", description: "Developing smart contracts, decentralized applications (DApps), and NFT marketplaces." },
+];
+
 // Slider settings
 const sliderSettings = {
   dots: false,
@@ -52,19 +66,52 @@ const sliderSettings = {
 };
 
 const Skills = () => {
+  const [selectedService, setSelectedService] = useState(null);
+
   return (
     <section id='skillsSection' className="skills">
       <h2>My Skills</h2>
       <Slider {...sliderSettings} className="skills-slider">
         {skills.map((skill, idx) => (
-          <div className="skill-item" key={idx}>
+          <motion.div 
+            className="skill-item" 
+            key={idx}
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
             <div className="logo-container">
               <img src={skill.logo} alt={skill.name} className="logo" />
             </div>
             <p>{skill.name}</p>
-          </div>
+          </motion.div>
         ))}
       </Slider>
+      
+      <h2>My Services</h2>
+      <div className="services-container">
+        {services.map((service, idx) => (
+          <motion.div 
+            className="service-item" 
+            key={idx}
+            onClick={() => setSelectedService(selectedService === service.name ? null : service.name)}
+            whileHover={{ scale: 1.05 }}
+          >
+            {service.name}
+            <AnimatePresence>
+              {selectedService === service.name && (
+                <motion.div 
+                  className="service-dropdown"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                >
+                  <p>{service.description}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 };
