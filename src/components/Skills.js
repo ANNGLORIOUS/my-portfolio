@@ -44,7 +44,6 @@ const services = [
   { name: "SaaS Development", description: "Developing cloud-based Software as a Service (SaaS) applications with subscription models." },
   { name: "Custom Software Development", description: "Creating tailor-made software solutions for businesses to improve efficiency and productivity." },
   { name: "AI & Machine Learning Solutions", description: "Implementing AI-powered tools, chatbots, and predictive analytics for data-driven decision-making." },
-  { name: "Technical Consulting & Mentorship", description: "Providing guidance on software architecture, code optimization, and career growth." },
   { name: "UI/UX Design & Prototyping", description: "Designing intuitive and visually appealing interfaces using Figma and Adobe XD." },
   { name: "Blockchain & Web3 Development", description: "Developing smart contracts, decentralized applications (DApps), and NFT marketplaces." },
 ];
