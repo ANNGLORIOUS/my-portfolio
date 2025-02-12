@@ -68,7 +68,7 @@ const Skills = () => {
   const [isRotating, setIsRotating] = useState(true);
 
   useEffect(() => {
-    setIsRotating(!selectedService);
+    setIsRotating(selectedService === null);
   }, [selectedService]);
 
   return (
@@ -94,7 +94,7 @@ const Skills = () => {
       <motion.div 
         className="services-container" 
         animate={{ rotateY: isRotating ? 360 : 0 }} 
-        transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+        transition={isRotating ? { repeat: Infinity, duration: 10, ease: "linear" } : {}}
       >
         {services.map((service, idx) => (
           <motion.div 
