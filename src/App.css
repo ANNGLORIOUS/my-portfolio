@@ -6,6 +6,7 @@ body {
     -webkit-font-smoothing: "Roboto", sans-serif;
     -moz-osx-font-smoothing: "Roboto", sans-serif;
     font-style: normal;
+    padding-top: 80px;
   }
   h1,
   h2,
@@ -162,6 +163,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
   }
   .navbar--items > ul {
     list-style: none;
