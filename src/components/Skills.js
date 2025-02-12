@@ -73,7 +73,7 @@ const Skills = () => {
 
   return (
     <section id='skillsSection' className="skills">
-      <h2>My Skills</h2>
+      <h2>Tech stack</h2>
       <Slider {...sliderSettings} className="skills-slider">
         {skills.map((skill, idx) => (
           <motion.div 
