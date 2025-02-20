@@ -34,6 +34,7 @@ export default function HeroSection() {
               <span>{text}</span>
               <Cursor cursorBlinking="false" cursorStyle="|" cursorColor="#8873ef" />
             </h1>
+            <p>I’m a full-stack software engineer specializing in Python (Flask, Django) and JavaScript (React, Node.js). With a background in software engineering and project management, I build scalable, user-centric applications. I’m passionate about empowering tech startups, I bridge the gap between business goals and technology to drive impactful results. My expertise in system architecture, API development, and UI/UX optimization allows me to craft seamless digital experiences while continuously learning and innovating.</p>
             
             <a href="/_MY-RESUME.pdf" download="MY-RESUME.pdf">
               <button className="resume-button">Get Resume</button>

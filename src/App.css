@@ -257,6 +257,20 @@ body {
 .resume-button:hover {
   background-color: var(--smallTextColor);
 }
+.hero--section--content-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--darkblue);
+  text-align: justify;
+  max-width: 600px;
+  padding: 10px 0;
+  background-color: var(--lightContrast);
+  border-left: 5px solid var(--primaryColor);
+  padding: 15px;
+  border-radius: 10px;
+  /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); */
+}
+
 /* Hero Section Style Ends */
 @media screen and (max-width: 768px) {
   .hero--grid {
