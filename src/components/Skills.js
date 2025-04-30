@@ -18,6 +18,8 @@ import dockerLogo from '../assets/assetlogo/docker-svgrepo-com.svg';
 import typescriptLogo from '../assets/assetlogo/typescript-svgrepo-com.svg';
 import cssLogo from '../assets/assetlogo/css-3-svgrepo-com.svg';
 import tailwindLogo from '../assets/assetlogo/tailwindcss-icon-svgrepo-com.svg';
+import canvaLogo from '../assets/assetlogo/canva-svgrepo-com.svg';
+import figmaLogo from '../assets/assetlogo/figma-svgrepo-com.svg';
 
 // Skill categories
 const skills = [
@@ -34,6 +36,8 @@ const skills = [
   { logo: githubLogo, name: 'GitHub' },
   { logo: dockerLogo, name: 'Docker' },
   { logo: typescriptLogo, name: 'TypeScript' },
+  {logo: canvaLogo, name:'Canva'},
+  {logo: figmaLogo, name: 'Figma'}
 ];
 
 const services = [
