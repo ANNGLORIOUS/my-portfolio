@@ -1,5 +1,5 @@
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import heroLogoImage from "../assets/hero-logo.jpeg";
+import herologo from "../assets/herologo.jpeg";
 import CountUp from "react-countup";
 
 export default function HeroSection() {
@@ -43,7 +43,7 @@ export default function HeroSection() {
 
           {/* Center Section */}
           <div className="hero--section--img">
-            <img src={heroLogoImage} alt="Hero Section" />
+            <img src={herologo} alt="Hero Section" />
           </div>
 
           {/* Right Section */}
