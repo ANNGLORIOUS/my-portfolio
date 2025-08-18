@@ -109,7 +109,7 @@ function Navbar() {
               to="contactSection" 
               className="navbar--content"
             >
-              ContactMe
+              Contact Me
             </Link>
           </li>
           

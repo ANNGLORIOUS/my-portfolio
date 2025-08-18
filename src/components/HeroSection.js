@@ -28,17 +28,34 @@ export default function HeroSection() {
         <div className="hero--grid">
           {/* Left Section */}
           <div className="hero--section--content-box">
-            <h1 className="hero--section--title">
-              Hey, I'm AnnGLorious
-              <br />
-              <span>{text}</span>
-              <Cursor cursorBlinking="false" cursorStyle="|" cursorColor="#8873ef" />
-            </h1>
-            <p>I’m a full-stack software engineer specializing in Python (Flask, Django) and JavaScript (React, Node.js). With a background in software engineering and project management, I build scalable, user-centric applications. I’m passionate about empowering tech startups, I bridge the gap between business goals and technology to drive impactful results. My expertise in system architecture, API development, and UI/UX optimization allows me to craft seamless digital experiences while continuously learning and innovating.</p>
+          <h1 className="hero--section--title">
+            Hey, I'm AnnGLorious
+              </h1>
+
+              <div className="typewriter-container">
+                <span className="typewriter-text">{text}</span>
+                <Cursor cursorBlinking={false} cursorStyle="|" cursorColor="#8873ef" />
+              </div>
+            <p>I craft digital experiences that users love and systems that scale seamlessly. With 2+ years of hands-on development, I specialize in transforming complex problems into elegant solutions through:<br></br>
+
+                → Clean Architecture<br></br>
+                  Modular, maintainable code that stands the test of iterations<br></br>
+
+                → Human-Centered Design<br></br>
+                Interfaces that delight while solving real needs<br></br>
+
+                  → Full-Cycle Ownership<br></br>
+                  From concept to deployment,with metrics-driven improvements</p><br></br>
             
-            <a href="/_MY-RESUME.pdf" download="MY-RESUME.pdf">
-              <button className="resume-button">Get Resume</button>
-            </a>
+            <div className="hero--buttons">
+                <a href="/_MY-RESUME.pdf" download="MY-RESUME.pdf">
+                  <button className="hero-btn">Get Resume</button>
+                </a>
+
+                <a href="#contactSection">
+                  <button className="hero-btn">Hire Me</button>
+                </a>
+             </div>
           </div>
 
           {/* Center Section */}
@@ -49,7 +66,7 @@ export default function HeroSection() {
           {/* Right Section */}
           <div className="hero--stats">
             <div className="stat-box">
-              <h2><CountUp start={0} end={1} duration={8} suffix="+" /></h2>
+              <h2><CountUp start={0} end={2} duration={8} suffix="+" /></h2>
               <h4>Years of Experience</h4>
             </div>
             <div className="stat-box">
