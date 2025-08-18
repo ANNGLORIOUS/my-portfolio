@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import logo1 from "../assets/logo1.png";
 
 function Navbar() {
   const [navActive, setNavActive] = useState(false);
@@ -15,7 +16,7 @@ function Navbar() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1200) {
-        setNavActive(false); 
+        setNavActive(false);
       }
     };
 
@@ -36,12 +37,16 @@ function Navbar() {
       {/* ============== Logo ============== */}
       <div className="flex items-center gap-[10px]">
         <div className="leading-[20px]">
+                  <img
+            src={logo1}
+            alt="AnnGlorious Logo"
+            className="navbar-logo"
+          />
           <h2 className="text-xl text-smallTextColor font-[700]">
-            AnnGLorious Mueni
           </h2>
         </div>
       </div>
-      
+
       {/* ============== Hamburger Menu Button ============== */}
       <button
         className={`nav__hamburger ${navActive ? "active" : ""}`}
@@ -78,7 +83,7 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="skillsSection"  
+              to="skillsSection"
               className="navbar--content"
             >
               Skills
@@ -92,7 +97,7 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="projectsSection"  
+              to="projectsSection"
               className="navbar--content"
             >
               Projects
@@ -106,13 +111,12 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="contactSection" 
+              to="contactSection"
               className="navbar--content"
             >
               Contact Me
             </Link>
           </li>
-          
         </ul>
       </div>
 
@@ -124,7 +128,7 @@ function Navbar() {
         smooth={true}
         offset={-70}
         duration={500}
-        to="contactSection"  
+        to="contactSection"
         className="btn btn-outline-primary"
       >
         Contact Me

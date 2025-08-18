@@ -1131,5 +1131,9 @@ html {
   background-color: var(--small-text-color, #6b7280); /* Darken the button on hover */
   transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
-
+.navbar-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
 
