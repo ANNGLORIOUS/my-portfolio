@@ -48,7 +48,7 @@ export default function HeroSection() {
                   From concept to deployment,with metrics-driven improvements</p><br></br>
             
             <div className="hero--buttons">
-                <a href="/_MY-RESUME.pdf" download="MY-RESUME.pdf">
+                <a href="/AnngloriousResume.pdf" download="AnngloriousResume.pdf">
                   <button className="hero-btn">Get Resume</button>
                 </a>
 
