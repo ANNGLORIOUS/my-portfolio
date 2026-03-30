@@ -34,9 +34,11 @@ export default function HeroSection() {
           <div className="hero--section--content-box">
             <h1 className="hero--section--title">Hey, I&apos;m AnnGLorious</h1>
 
-            <div className="typewriter-container">
-              <span className="typewriter-text">{text}</span>
-              <Cursor cursorBlinking={false} cursorStyle="|" cursorColor="#8873ef" />
+            <div className="typewriter-shell">
+              <div className="typewriter-container">
+                <span className="typewriter-text">{text}</span>
+                <Cursor cursorBlinking={false} cursorStyle="|" cursorColor="#8873ef" />
+              </div>
             </div>
 
             <p>

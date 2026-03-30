@@ -1,8 +1,11 @@
 'use client';
 
 import type { StaticImageData } from 'next/image';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import type { IconType } from 'react-icons';
+import { motion } from 'framer-motion';
+import { FaBrain, FaCode, FaDatabase, FaLayerGroup, FaMobileAlt, FaPaintBrush } from 'react-icons/fa';
+import { GiCube, GiSparkles } from 'react-icons/gi';
+import { HiOutlineChip } from 'react-icons/hi';
 import Slider from 'react-slick';
 import canvaLogo from '../assets/assetlogo/canva-svgrepo-com.svg';
 import cssLogo from '../assets/assetlogo/css-3-svgrepo-com.svg';
@@ -26,6 +29,7 @@ type Skill = {
 };
 
 type Service = {
+  icon: IconType;
   name: string;
   description: string;
 };
@@ -50,40 +54,49 @@ const skills: Skill[] = [
 
 const services: Service[] = [
   {
+    icon: FaCode,
     name: 'Web Development',
-    description: 'Creating modern, responsive, and high-performance web applications using the latest technologies.',
+    description: 'Responsive, production-ready web apps built with strong UX and maintainable code.',
   },
   {
+    icon: FaMobileAlt,
     name: 'Mobile App Development',
-    description: 'Building native and cross-platform mobile apps tailored to business and user needs.',
+    description: 'Cross-platform mobile experiences designed to feel fast, polished, and intuitive.',
   },
   {
+    icon: GiSparkles,
     name: 'API Development & Integration',
-    description: 'Designing and integrating RESTful and GraphQL APIs for seamless data exchange.',
+    description: 'Reliable APIs and integrations that keep products connected and data flowing cleanly.',
   },
   {
+    icon: FaDatabase,
     name: 'Database Development & Management',
-    description: 'Structuring and optimizing databases for reliable performance and scale.',
+    description: 'Thoughtful data models and database tuning for long-term performance and scale.',
   },
   {
+    icon: FaLayerGroup,
     name: 'SaaS Development',
-    description: 'Developing cloud-based products with strong product thinking and maintainable architecture.',
+    description: 'Cloud-based software shaped around product goals, scalability, and clear architecture.',
   },
   {
+    icon: GiCube,
     name: 'Custom Software Development',
-    description: 'Creating tailored software solutions that improve operational efficiency and user outcomes.',
+    description: 'Tailored software systems built around the exact workflow your team needs.',
   },
   {
+    icon: FaBrain,
     name: 'AI & Machine Learning Solutions',
-    description: 'Implementing AI-powered tools, chatbots, and analytics for practical decision support.',
+    description: 'Practical AI features, chat experiences, and automation that support real decisions.',
   },
   {
+    icon: FaPaintBrush,
     name: 'UI/UX Design & Prototyping',
-    description: 'Designing intuitive and visually appealing interfaces using modern prototyping workflows.',
+    description: 'Wireframes and polished interfaces that balance clarity, delight, and usability.',
   },
   {
+    icon: HiOutlineChip,
     name: 'Blockchain & Web3 Development',
-    description: 'Exploring smart contracts and decentralized applications with a product-minded approach.',
+    description: 'Product-minded exploration of smart contracts and decentralized user experiences.',
   },
 ];
 
@@ -103,13 +116,6 @@ const sliderSettings = {
 };
 
 export default function Skills() {
-  const [selectedService, setSelectedService] = useState<string | null>(null);
-  const [isRotating, setIsRotating] = useState(true);
-
-  useEffect(() => {
-    setIsRotating(selectedService === null);
-  }, [selectedService]);
-
   return (
     <section id="skillsSection" className="skills">
       <h2>Tech Stack</h2>
@@ -130,38 +136,25 @@ export default function Skills() {
       </Slider>
 
       <h2>My Services</h2>
-      <motion.div
-        className="services-container"
-        animate={{ rotateY: isRotating ? 360 : 0 }}
-        transition={isRotating ? { repeat: Infinity, duration: 10, ease: 'linear' } : { duration: 0.3 }}
-      >
+      <div className="services-container">
         {services.map((service) => (
           <motion.div
             className="service-item"
             key={service.name}
-            onClick={() => setSelectedService((current) => (current === service.name ? null : service.name))}
-            whileHover={{ scale: 1.05 }}
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ type: 'spring', stiffness: 100, damping: 10 }}
+            whileHover={{ y: -8, scale: 1.02 }}
+            initial={{ y: 24, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.35 }}
           >
-            {service.name}
-            <AnimatePresence>
-              {selectedService === service.name && (
-                <motion.div
-                  className="service-dropdown"
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <p>{service.description}</p>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <div className="service-icon">
+              <service.icon aria-hidden="true" />
+            </div>
+            <h3>{service.name}</h3>
+            <p>{service.description}</p>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }
